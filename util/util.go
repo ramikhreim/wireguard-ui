@@ -15,7 +15,7 @@ import (
 	rice "github.com/GeertJohan/go.rice"
 	externalip "github.com/glendc/go-external-ip"
 	"github.com/labstack/gommon/log"
-	"github.com/ngoduykhanh/wireguard-ui/model"
+	"github.com/ramikhreim/wireguard-ui/model"
 	"github.com/sdomino/scribble"
 )
 

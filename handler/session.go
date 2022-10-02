@@ -6,7 +6,7 @@ import (
 
 	"github.com/labstack/echo-contrib/session"
 	"github.com/labstack/echo/v4"
-	"github.com/ngoduykhanh/wireguard-ui/util"
+	"github.com/ramikhreim/wireguard-ui/util"
 )
 
 func ValidSession(next echo.HandlerFunc) echo.HandlerFunc {
@@ -14,9 +14,9 @@ func ValidSession(next echo.HandlerFunc) echo.HandlerFunc {
 		if !isValidSession(c) {
 			nextURL := c.Request().URL
 			if nextURL != nil && c.Request().Method == http.MethodGet {
-				return c.Redirect(http.StatusTemporaryRedirect, fmt.Sprintf(util.BasePath + "/login?next=%s", c.Request().URL))
+				return c.Redirect(http.StatusTemporaryRedirect, fmt.Sprintf(util.BasePath+"/login?next=%s", c.Request().URL))
 			} else {
-				return c.Redirect(http.StatusTemporaryRedirect, util.BasePath + "/login")
+				return c.Redirect(http.StatusTemporaryRedirect, util.BasePath+"/login")
 			}
 		}
 		return next(c)

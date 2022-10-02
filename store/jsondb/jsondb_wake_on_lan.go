@@ -3,7 +3,8 @@ package jsondb
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/ngoduykhanh/wireguard-ui/model"
+
+	"github.com/ramikhreim/wireguard-ui/model"
 )
 
 func (o *JsonDB) GetWakeOnLanHosts() ([]model.WakeOnLanHost, error) {
