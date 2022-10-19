@@ -20,7 +20,7 @@ SERVER_PUBKEY=$( echo $SERVER_PRIVKEY | wg pubkey )
 echo $SERVER_PUBKEY > ./server_public.key
 echo $SERVER_PRIVKEY > ./server_private.key
 
-ENDPOINT="13.48.110.170:54321"
+ENDPOINT="13.48.227.2:54321"
 echo $ENDPOINT > ./endpoint.var
 
 SERVER_IP="10.50.0.1"
