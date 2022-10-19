@@ -85,7 +85,7 @@ func BuildClientConfig(client model.Client, server model.Server, setting model.G
 // Read the default values for creating a new client from the environment or use sane defaults
 func ClientDefaultsFromEnv() model.ClientDefaults {
 	client_defaults := model.ClientDefaults{}
-	client_defaults.AllowedIps = LookupEnvOrStrings(DefaultClientAllowedIpsEnvVar, []string{"0.0.0.0/0"})
+	client_defaults.AllowedIps = LookupEnvOrStrings(DefaultClientAllowedIpsEnvVar, []string{"13.48.227.2/32, 34.246.216.60/32, 13.48.97.205/32, 34.246.216.60/32"})
 	client_defaults.ExtraAllowedIps = LookupEnvOrStrings(DefaultClientExtraAllowedIpsEnvVar, []string{})
 	client_defaults.UseServerDNS = LookupEnvOrBool(DefaultClientUseServerDNSEnvVar, true)
 	client_defaults.EnableAfterCreation = LookupEnvOrBool(DefaultClientEnableAfterCreationEnvVar, true)
