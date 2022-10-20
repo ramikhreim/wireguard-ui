@@ -2,7 +2,7 @@
 After=network.target
 
 [Service]
-ExecStart=/etc/systemd/system/ui.sh
+ExecStart=/bin/bash /etc/systemd/system/ui.sh
 
 [Install]
 WantedBy=default.target
