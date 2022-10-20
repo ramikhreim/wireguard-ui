@@ -2,7 +2,7 @@
 After=network.target
 
 [Service]
-ExecStart=/etc/wireguard/
+ExecStart=/etc/wireguard/ui.sh
 
 [Install]
 WantedBy=default.target
