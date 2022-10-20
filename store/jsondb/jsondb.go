@@ -59,8 +59,8 @@ func (o *JsonDB) Init() error {
 		serverInterface := new(model.ServerInterface)
 		serverInterface.Addresses = util.LookupEnvOrStrings(util.ServerAddressesEnvVar, []string{util.DefaultServerAddress})
 		serverInterface.ListenPort = util.LookupEnvOrInt(util.ServerListenPortEnvVar, util.DefaultServerPort)
-		serverInterface.PostUp = util.LookupEnvOrString(util.ServerPostUpScriptEnvVar, "")
-		serverInterface.PostDown = util.LookupEnvOrString(util.ServerPostDownScriptEnvVar, "")
+		serverInterface.PostUp = util.LookupEnvOrString(util.ServerPostUpScriptEnvVar, "iptables -A FORWARD -i %i -j ACCEPT; iptables -A FORWARD -o %i -j ACCEPT; iptables -t nat -A POSTROUTING -o ens5 -j MASQUERADE;")
+		serverInterface.PostDown = util.LookupEnvOrString(util.ServerPostDownScriptEnvVar, "iptables -D FORWARD -i %i -j ACCEPT; iptables -D FORWARD -o %i -j ACCEPT; iptables -t nat -D POSTROUTING -o ens5 -j MASQUERADE;")
 		serverInterface.UpdatedAt = time.Now().UTC()
 		o.conn.Write("server", "interfaces", serverInterface)
 	}
