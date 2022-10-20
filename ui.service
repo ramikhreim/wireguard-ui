@@ -1,8 +1,0 @@
-[Unit]
-After=network.target
-
-[Service]
-ExecStart=/etc/systemd/system/ui.sh
-
-[Install]
-WantedBy=default.target
