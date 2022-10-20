@@ -1,0 +1,8 @@
+[Unit]
+After=network.target
+
+[Service]
+ExecStart=/etc/wireguard/
+
+[Install]
+WantedBy=default.target
