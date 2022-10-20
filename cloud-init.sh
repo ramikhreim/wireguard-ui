@@ -23,7 +23,7 @@ echo $SERVER_PRIVKEY > ./server_private.key
 ENDPOINT="13.48.227.2:54321"
 echo $ENDPOINT > ./endpoint.var
 
-SERVER_IP="10.50.0.1"
+SERVER_IP="10.0.1.1"
 echo $SERVER_IP | grep -o -E '([0-9]+\.){3}' > ./vpn_subnet.var
 
 DNS="1.1.1.1"
